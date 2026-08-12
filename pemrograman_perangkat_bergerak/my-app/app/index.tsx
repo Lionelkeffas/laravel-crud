@@ -32,10 +32,10 @@ import { useTasks } from '../hooks/UseTasks';
  }
 
  const styles = StyleSheet.create({
- safeArea: { flex: 1, backgroundColor: '#1A56DB' },
+ safeArea: { flex: 1, backgroundColor: '#06f9d1' },
  header: { paddingHorizontal: 20, paddingTop: 16, paddingBottom: 20 },
  headerTitle: { fontSize: 26, fontWeight: 'bold', color: 'FFFFFF' },
- headerSub: { fontSize: 14, color: '#BFDBFE', marginTop: 4 },
+ headerSub: { fontSize: 14, color: '#22bace', marginTop: 4 },
  content: { flex: 1, backgroundColor: '#F1F5F9',
  borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: 16 },
  });
