@@ -13,6 +13,19 @@ class Siswa extends Model
         'nis',
         'kelas',
         'jurusan',
+        'jenis_kelamin',
         'alamat',
+        'kelas_id',
+        'jurusan_id',
     ];
+
+    public function kelasRelation()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas_id');
+    }
+
+    public function jurusanRelation()
+    {
+        return $this->belongsTo(Jurusan::class, 'jurusan_id');
+    }
 }

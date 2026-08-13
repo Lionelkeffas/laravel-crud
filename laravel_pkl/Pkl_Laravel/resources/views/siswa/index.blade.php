@@ -460,7 +460,7 @@
             >
 
 
-            <select name="kelas">
+            <select name="kelas_id">
 
                 <option value="">
                     Semua Kelas
@@ -469,10 +469,10 @@
                 @foreach($kelas as $item)
 
                     <option
-                        value="{{ $item }}"
-                        {{ request('kelas') == $item ? 'selected' : '' }}
+                        value="{{ $item->id }}"
+                        {{ request('kelas_id') == $item->id ? 'selected' : '' }}
                     >
-                        {{ $item }}
+                        {{ $item->nama }}
                     </option>
 
                 @endforeach
@@ -480,7 +480,7 @@
             </select>
 
 
-            <select name="jurusan">
+            <select name="jurusan_id">
 
                 <option value="">
                     Semua Jurusan
@@ -489,10 +489,10 @@
                 @foreach($jurusan as $item)
 
                     <option
-                        value="{{ $item }}"
-                        {{ request('jurusan') == $item ? 'selected' : '' }}
+                        value="{{ $item->id }}"
+                        {{ request('jurusan_id') == $item->id ? 'selected' : '' }}
                     >
-                        {{ $item }}
+                        {{ $item->nama }}
                     </option>
 
                 @endforeach

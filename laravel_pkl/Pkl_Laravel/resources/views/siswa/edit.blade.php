@@ -227,18 +227,22 @@
 
                 <div class="form-group">
 
-                    <label for="kelas">
+                    <label for="kelas_id">
                         Kelas
                     </label>
 
-                    <input
-                        type="text"
-                        id="kelas"
-                        name="kelas"
-                        value="{{ old('kelas', $siswa->kelas) }}"
-                        placeholder="Contoh: XI RPL 1"
+                    <select
+                        id="kelas_id"
+                        name="kelas_id"
                         required
                     >
+                        <option value="">-- Pilih Kelas --</option>
+                        @foreach($kelas as $item)
+                            <option value="{{ $item->id }}" {{ old('kelas_id', $siswa->kelas_id) == $item->id ? 'selected' : '' }}>
+                                {{ $item->nama }}
+                            </option>
+                        @endforeach
+                    </select>
 
                 </div>
 
@@ -247,18 +251,45 @@
 
             <div class="form-group">
 
-                <label for="jurusan">
+                <label for="jurusan_id">
                     Jurusan
                 </label>
 
-                <input
-                    type="text"
-                    id="jurusan"
-                    name="jurusan"
-                    value="{{ old('jurusan', $siswa->jurusan) }}"
-                    placeholder="Contoh: RPL"
+                <select
+                    id="jurusan_id"
+                    name="jurusan_id"
                     required
                 >
+                    <option value="">-- Pilih Jurusan --</option>
+                    @foreach($jurusan as $item)
+                        <option value="{{ $item->id }}" {{ old('jurusan_id', $siswa->jurusan_id) == $item->id ? 'selected' : '' }}>
+                            {{ $item->nama }}
+                        </option>
+                    @endforeach
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="jenis_kelamin">
+                    Jenis Kelamin
+                </label>
+
+                <select
+                    id="jenis_kelamin"
+                    name="jenis_kelamin"
+                    required
+                >
+                    <option value="">-- Pilih Jenis Kelamin --</option>
+                    <option value="Laki-laki" {{ old('jenis_kelamin', $siswa->jenis_kelamin) == 'Laki-laki' ? 'selected' : '' }}>
+                        Laki-laki
+                    </option>
+                    <option value="Perempuan" {{ old('jenis_kelamin', $siswa->jenis_kelamin) == 'Perempuan' ? 'selected' : '' }}>
+                        Perempuan
+                    </option>
+                </select>
 
             </div>
 
